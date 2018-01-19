@@ -6,9 +6,10 @@
         this.delete = function(loc) {
             pb.contacts.splice(loc, 1)
         };
-        
+        this.toggleEdit = function(c) {
+            c.editable = !c.editable?true:false;
+        };
         $http.get("phone-book.json").then(function(res) {
-            console.log(res)
             pb.contacts = res.data.contacts
         },function(res) {
             console.log("Error")

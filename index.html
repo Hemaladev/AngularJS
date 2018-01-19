@@ -25,18 +25,30 @@
                 <th>&nbsp;</th>
             </tr>
             <tr ng-repeat="iterator in contact.contacts">
-                    <td>{{$index}}</td>
-                    <td>{{iterator.id}}</td>
-                    <td>{{iterator.firstName}}</td>
-                    <td>{{iterator.lastName}}</td>
-                    <td>{{iterator.email}}</td>
-                    <td>{{iterator.phone}}</td>
-                    <td>
-                        <button class="btn btn-success">Edit</button>
-                        <button ng-click="contact.delete($index)" class="btn btn-danger" >Delete</button>
-                    </td>
-    
-                </tr>
+                <td>{{$index + 1}}</td>
+                <td>{{iterator.id}}</td>
+                <td>
+                    <span ng-show="!iterator.editable">{{iterator.firstName}}</span>
+                    <input ng-show="iterator.editable" type="text" class="form-control" ng-model="iterator.firstName" />
+                </td>
+                <td>
+                    <span ng-show="!iterator.editable">{{iterator.lastName}}</span>
+                    <input ng-show="iterator.editable" type="text" class="form-control" ng-model="iterator.lastName" />
+                </td>
+                <td>
+                    <span ng-show="!iterator.editable">{{iterator.email}}</span>
+                    <input ng-show="iterator.editable" type="text" class="form-control" ng-model="iterator.email" />
+                </td>
+                <td>
+                    <span ng-show="!iterator.editable">{{iterator.phone}}</span>
+                    <input ng-show="iterator.editable" type="text" class="form-control" ng-model="iterator.phone" />
+                </td>
+                <td>
+                    <button ng-show="!iterator.editable" ng-click="contact.toggleEdit(iterator)" class="btn btn-primary btn-sm">Edit</button>
+                    <button ng-show="iterator.editable" ng-click="contact.toggleEdit(iterator)" class="btn btn-success btn-sm">Update</button>
+                    <button ng-click="contact.delete($index)" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
 
         </table>
     </div>
