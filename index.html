@@ -16,31 +16,63 @@
 
 <body> 
 <div class="container" ng-controller="StoreController as store"> 
-<input type="text" class="form-control" ng-model="store.content" /> 
-<div>Text Content: {{store.content}}</div> 
-
-<img ng-src="{{store.imagesrc}}" /> 
-<table class="table" width="100%"> 
-<tr> 
-<th>#</th> 
-<th>Firstname</th> 
-<th>Lastname</th> 
-<th>Email</th> 
-<th>PhoneNo</th> 
-<th>&nbsp;</th> 
-</tr> 
-<tr ng-repeat="contact in store.contacts"> 
-<td>{{$index + 1}}</td> 
-<td>{{contact.firstName}}</td> 
-<td>{{contact.lastName}}</td> 
-<td>{{contact.email}}</td> 
-<td>{{contact.phone}}</td> 
-<td> 
-<button class="btn btn-sm btn-warning">Edit</button> 
-<button class="btn btn-sm btn-danger">Delete</button> 
-</td> 
-</tr> 
-</table> 
+<div class="row"> 
+<div class="col-3">Firstname</div> 
+<div class="col-6"> 
+<input type="text" class="form-control" ng-model="store.contact.firstName" /> 
+</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Lastname</div> 
+<div class="col-6"> 
+<input type="text" class="form-control" ng-model="store.contact.lastName" /> 
+</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Email ID</div> 
+<div class="col-6"> 
+<input type="text" class="form-control" ng-model="store.contact.email" /> 
+</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Phone No.</div> 
+<div class="col-6"> 
+<input type="text" class="form-control" ng-model="store.contact.phone" /> 
+</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Gender</div> 
+<div class="col-6"> 
+<label><input type="radio" ng-model="store.contact.gender" value="Male" />Male</label> 
+<label><input type="radio" ng-model="store.contact.gender" value="Female" />Female</label> 
+</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">&nbsp;</div> 
+<div class="col-6"> 
+<button ng-click="store.showContact()" class="btn btn-primary">Update</button> 
+</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Firstname</div> 
+<div class="col-6">{{store.contact.firstName}}</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Lastname</div> 
+<div class="col-6">{{store.contact.lastName}}</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Email ID</div> 
+<div class="col-6">{{store.contact.email}}</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Phone No.</div> 
+<div class="col-6">{{store.contact.phone}}</div> 
+</div> 
+<div class="row"> 
+<div class="col-3">Gender</div> 
+<div class="col-6">{{store.contact.gender}}</div> 
+</div> 
 </div> 
 
 </body> 
