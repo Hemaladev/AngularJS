@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+    <head>
+        <title>Angular JS</title>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+        <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </head>
+    <body>
+        <div class="container" ng-controller="ContactController as  cont">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="iterator in cont.contacts">
+                    <div> 
+                        <h2>FirstName : {{iterator.firstName}}</h1>
+                        <h2>LastName : {{iterator.lastName}}</h2>
+                        <h2>DOB : {{iterator.dob}}</h2>       
+                        <h2>Email : {{iterator.email}}</h1>
+                        <h2>PhoneNo : {{iterator.phoneNo}}</h2>    
+                        <button type="button" ng-show="iterator.canEdit" class="btn btn-primary">Edit</button>
+                        <button type="button" ng-hide="iterator.deleteContact" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
