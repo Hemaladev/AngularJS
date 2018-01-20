@@ -46,7 +46,7 @@
                 <td>
                     <button ng-show="!iterator.editable" ng-click="contact.toggleEdit(iterator)" class="btn btn-primary btn-sm">Edit</button>
                     <button ng-show="iterator.editable" ng-click="contact.toggleEdit(iterator)" class="btn btn-success btn-sm">Update</button>
-                    <button ng-click="contact.delete($index)" class="btn btn-danger btn-sm">Delete</button>
+                    <button ng-click="contact.delete($index,iterator.id)" class="btn btn-danger btn-sm">Delete</button>
                 </td>
             </tr>
 
